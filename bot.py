@@ -7,7 +7,8 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="/", intents=intents)
 
-TOKEN = "TON_TOKEN_ICI"
+import os
+TOKEN = os.getenv("TOKEN")
 GUILD_ID = 123456789012345678  # Remplace par ton ID de serveur
 ROLE_NAME = "VIP"
 
