@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Déblocage</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Regarde les pubs pour débloquer ton accès</h1>
+    <div class="pubs">
+      <button onclick="pubSeen()">Pub 1</button>
+      <button onclick="pubSeen()">Pub 2</button>
+      <button onclick="pubSeen()">Pub 3</button>
+      <button onclick="pubSeen()">Pub 4</button>
+      <button onclick="pubSeen()">Pub 5</button>
+    </div>
+    <p id="status">Clique sur toutes les pubs pour révéler ta clé...</p>
+    <div id="key" style="display:none;">
+      <h2>Voici ta clé :</h2>
+      <p>{{ key }}</p>
+    </div>
+  </div>
+  <script>
+    let count = 0;
+    function pubSeen() {
+      count++;
+      if (count >= 5) {
+        document.getElementById("status").style.display = "none";
+        document.getElementById("key").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
